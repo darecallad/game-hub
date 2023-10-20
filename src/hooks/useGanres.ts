@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import genres from "../data/genres";
 
 export interface Genre {
@@ -6,6 +7,9 @@ export interface Genre {
   image_background: string;
 }
 
-const useGenres = () => ({ data: genres, isLoading: false, error: null });
+const useGenres = () =>
+  useQuery<Genre>({
+    queryKey: ["genre"],
+  });
 
 export default useGenres;
