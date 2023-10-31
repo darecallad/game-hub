@@ -5,6 +5,8 @@ import useGameQueryStore from "../store";
 import { Platform } from "./usePlatforms";
 
 export interface Game {
+  description_raw: string;
+  slug: string;
   id: number;
   name: string;
   background_image: string;
